@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="10000">
+
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/car_image_view" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="20"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/car_image_view"
+                app:percentX="0.25"
+                app:percentY="-0.20" />
+
+            <KeyPosition
+                app:framePosition="40"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/car_image_view"
+                app:percentX="0.50" />
+
+            <KeyPosition
+                app:framePosition="60"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/car_image_view"
+                app:percentX="0.75"
+                app:percentY="0.25" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/car_image_view"
+            android:layout_width="@dimen/car_image_view_width"
+            android:layout_height="@dimen/car_image_view_width"
+            android:layout_marginEnd="@dimen/car_image_view_start_margin_end"
+            android:layout_marginBottom="@dimen/car_image_view_start_margin_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/car_image_view"
+            android:layout_width="@dimen/car_image_view_width"
+            android:layout_height="@dimen/car_image_view_width"
+            android:layout_marginStart="@dimen/car_image_view_end_margin_start"
+            android:layout_marginTop="@dimen/car_image_view_end_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>
