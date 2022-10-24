@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MoveViewAnimationTestApp</string>
+    <string name="car_image_name">A car</string>
 </resources>
